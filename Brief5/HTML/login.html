@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../Css/login.regester.css">
+    <link rel="shortcut icon" href="../img/Faveicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h2><a href="#">AutoSSINE</a></h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Gallery</a></li>
+                <li><a href="../Reservation.html">Reservation</a></li>
+                <li><a class="btn" href="../HTML/login.html">Register/LogIn</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="from-Box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icone">
+                <a href=""><img src="../img/fb2.png"></a>
+                <a href="#"><img src="../img/Yt2.png"></a>
+                <a href="#"><img src="../img/tw.png"></a>
+                <a href="#"><img src="../img/In2.png"></a>
+            </div>
+            <div>
+                <form id="login" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">log in</button>
+                </form>
+                <div class="lost">
+                    <a href="lost password.html">Lost your password?</a>
+
+                </div>
+                <form id="register" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+
+            </div>
+
+        </div>
+        <script>
+            //Validation javascript
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+            }
+            function login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+            }
+        </script>
+
+</body>
+
+</html>
