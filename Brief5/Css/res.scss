@@ -439,6 +439,9 @@ p {
     .tets h1 {
         font-size: 30px;
     }
+    .card img{
+        width: 7%;
+    }
 }
 
 @media only screen and (max-width: 1139px) {
@@ -454,6 +457,9 @@ p {
     .column {
         width: 100%;
         display: block;
+    }
+    .card img {
+        width: 7%;
     }
 }
 
@@ -473,6 +479,9 @@ p {
     .column {
         width: 100%;
         display: block;
+    }
+    .card img {
+        width: 7%;
     }
 }
 
@@ -498,6 +507,9 @@ p {
         width: 100%;
         display: block;
     }
+    .card img {
+        width: 7%;
+    }
 }
 
 @media only screen and (max-width: 340px) {
@@ -507,5 +519,8 @@ p {
 
     .tets h1 {
         font-size: 30px;
+    }
+    .card img {
+        width: 7%;
     }
 }

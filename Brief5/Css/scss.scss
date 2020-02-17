@@ -91,7 +91,6 @@ a.btn:hover{
 }
 .flex-form{
     display: flex;
-    z-index: 10;
     position: relative;
     width: 500px;
     box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
@@ -136,16 +135,8 @@ img{
      
      
  }
- button{
-     padding: 25px;
-     border: none;
-     background: #000000;
-     font-size: 30px;
-     color: white;
-     position: absolute;
-     top: 34%;
-     cursor: pointer;
- }
+
+
  .but{
     border: none;
     outline: 0;
@@ -179,12 +170,14 @@ img{
  }
 
  .h12{
-  padding: 188px;
   color: #fff;
   background-image: url(../Img/any2.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
+  height: 654px;
+  width: 100%;
+  padding: 17%;
 }
 .h12 h1{
  font-size: 70px;
@@ -232,20 +225,7 @@ img{
     text-align: center;
   }
 
-  
-    .next {
-      border-radius: 10px 0px 0px 10px;
-      position: relative;
-      top: -229px;
-      right: -89%;
-    }
 
-    .prew {
-      border-radius: 10px 0px 0px 10px;
-      position: relative;
-      top: -229px;
-      left: 1px;
-    }
 
 
   .direction{
@@ -324,6 +304,40 @@ img{
   }
 
 
+
+
+
+  .btn-group button {
+    background-color: #ef3f5a;
+    border: 1px solid #ef3f5a;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+  }
+
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+
+  .btn-group button:hover {
+    background-color: #d73851;
+  }
+   .btn-group img {
+     width: 37px;
+     height: 54px;
+   }
+
+   .btn-group img {
+     width: 37px;
+     height: 54px;
+   }
+
+
   
 
 
@@ -391,11 +405,25 @@ img{
         }
     
       .h12 h1{
-        font-size: 10px;
+        font-size: 37px;
       }
       .h12 P {
-        font-size: 7px;
+        font-size: 19px;
       }
+      .h11 h1{
+        font-size: 20px;
+      }
+      .h11 p{
+        font-size: 17px;
+      }
+      .h13 h1{
+        font-size: 19px;
+      }
+      .h13 p{
+        font-size: 17px;
+      }
+
+    
 }
 @media all and (max-width:360px){
     header nav li{
