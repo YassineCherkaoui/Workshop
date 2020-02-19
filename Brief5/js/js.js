@@ -10,13 +10,13 @@ function formValidation() {
   var umsex = document.registration.msex;
   var ufsex = document.registration.fsex;
   if (userid_validation(uid, 5, 12)) {
-    if (passid_validation(passid, 7, 12)) {
-      if (allLetter(uname)) {
-        if (alphanumeric(uadd)) {
-          if (countryselect(ucountry)) {
-            if (allnumeric(uzip)) {
-              if (ValidateEmail(uemail)) {
-                if (validsex(umsex, ufsex)) {}
+  if (passid_validation(passid, 7, 12)) {
+  if (allLetter(uname)) {
+  if (alphanumeric(uadd)) {
+  if (countryselect(ucountry)) {
+  if (allnumeric(uzip)) {
+  if (ValidateEmail(uemail)) {
+  if (validsex(umsex, ufsex)) {}
               }
             }
           }
@@ -28,20 +28,20 @@ function formValidation() {
 
 }
 
-function userid_validation(uid, mx, my) {
+function userid_validation(uid, mx, min) {
   var uid_len = uid.value.length;
-  if (uid_len == 0 || uid_len >= my || uid_len < mx) {
-    alert("User Id should not be empty / length be between " + mx + " to " + my);
+  if (uid_len == 0 || uid_len >= min || uid_len < mx) {
+    alert("User Id should not be empty / length be between " + mx + " to " + min);
     uid.focus();
     return false;
   }
   return true;
 }
 
-function passid_validation(passid, mx, my) {
+function passid_validation(passid, mx, min) {
   var passid_len = passid.value.length;
-  if (passid_len == 0 || passid_len >= my || passid_len < mx) {
-    alert("Password should not be empty / length be between " + mx + " to " + my);
+  if (passid_len == 0 || passid_len >= min || passid_len < mx) {
+    alert("Password should not be empty / length be between " + mx + " to " + min);
     passid.focus();
     return false;
   }

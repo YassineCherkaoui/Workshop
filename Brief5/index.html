@@ -20,10 +20,15 @@
             </ul>
         </nav>
     </header>
+    <section>
+      <video id="slid" autoplay muted loop>
+        <source src="img/video back car.mp4" type="video/mp4">
+      </video>
+    </section>
     <div class="cover">
         <h1>Discover what cars you want to own</h1>
         <form class="flex-form" action="index.html">
-            <input type="Search" placeholder="Your Email" id="myEmail"
+            <input onkeyup='this.value=this.value.toUpperCase()' type="Search" placeholder="Your Email" id="myEmail"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             <input type="submit" value="Subscribe" onclick="myFunction()">
         </form>
@@ -61,11 +66,7 @@
         choose perfect parts for
         your vehicle</p>
       </div>
-
-      <div class="h13">
-        <p>BUY OR SELL VEHICLES</p>
-        <h1>FIND YOUR CAR</h1>
-        </div>
+      <div class="blink"></div>
 <div id="yassinedrow">
     <div class="row">
     <div class="column">
