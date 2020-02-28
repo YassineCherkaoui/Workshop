@@ -6,7 +6,7 @@
 body {
   font-family: 'Lato'sans-serif;
   margin: 0;
-  background-image: url(../Img/v1.jpg);
+  background-image: url(../img/v1.jpg);
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -183,7 +183,7 @@ img {
 .h11 {
   padding: 70px;
   color: #fff;
-  background-image: url(../Img/gif.gif);
+  background-image: url(../img/gif.gif);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -200,7 +200,7 @@ img {
 
 .h12 {
   color: #fff;
-  background-image: url(../Img/any2.jpg);
+  background-image: url(../img/any2.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
