@@ -52,6 +52,17 @@ header{
     background-color: black;
     top: 0;
 }
+.Byit{
+ background-color: #ef3f5a;
+ border: 1px solid #ef3f5a;
+ color: white;
+ padding: 13px 71px;
+ cursor: pointer;
+}
+.Byit :hover {
+  background-color: #d73851;
+  border: 1px solid #ef3f5a;
+}
 header nav ul{
     display: flex;
 }
