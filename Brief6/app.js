@@ -32,6 +32,7 @@ fs.readFile('data.json', 'utf-8', function (err, data) {
     fs.writeFile('data.json', JSON.stringify(arrayOfObjects), 'utf-8', function(err) {
         if (err) throw err
         console.log('Done!')
+        res.sendFile(__dirname + "/index.html");
   
     })
 })
