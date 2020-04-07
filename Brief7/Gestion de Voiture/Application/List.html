@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/list.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Dashboard</header>
+  <ul>
+    <li><a href="http://localhost:8080/client"><i class="fas fa-users"></i>List Client</a></li>
+    <li><a href="http://localhost:8080/contract"><i class="fas fa-file-contract"></i>Contrat</a></li>
+    <li><a href="http://localhost:8080/reservation"><i class="far fa-window-maximize"></i>Reservation</a></li>
+    <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
+    <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
+    <li><a href="#"><i class="far fa-id-card"></i>Contact</a></li>
+  </ul>
+</div>
+ <section></section>
+
+
+
+
+  <h1 class="titl">Liste de Client</h1>
+
+ <div class="table-responsive">
+  <table class="table" id="heroesTable">
+      <thead>
+          <tr>
+              <th>Nom</th>
+              <th>Cin</th>
+              <th>Permis</th>
+              <th>Date de Pirmis</th>
+              <th>Ville</th>
+              <th>Phone</th>
+          </tr>
+      </thead>
+      <tbody id="heroesBody"></tbody>
+  </table>
+</div>
+<br><br><br>
+<button type="button" class="btn btn-primary btn-lg"data-toggle="modal" data-target="#exampleModal"
+data-whatever="@mdo">AJOUTER</button>
+
+<form action="/client" method="POST">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">AJOUTER un Client</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Nom:</label>
+                          <input type="text" class="form-control" id="recipient-name" name="name">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Cin:</label>
+                          <input type="text" class="form-control" id="recipient-name" name="Cin">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Permis:</label>
+                          <input type="text" class="form-control" id="recipient-name" name="permis">
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Date de Pirmis:</label>
+                        <input type="date" class="form-control" id="recipient-name" name="DatePirmis">
+                    </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Ville:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="ville">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Phone</label>
+                          <input type="number" class="form-control" id="recipient-name" name="Phone">
+                      </div>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                  <button type="submit" class="btn btn-primary">Ajouter</button>
+              </div>
+          </div>
+        
+      </div>
+  </div>
+</form>
+
+
+ <script>
+  $.ajax({
+  method : 'GET',
+  url:'http://localhost:8080/clientdata',
+  dataType: 'json'
+}).done(function(data){
+  console.log(data);
+  $.map(data, function(post ,i){
+      $('#heroesBody').append($("<tr>")
+              .append($("<td>").append(post.name))
+              .append($("<td>").append(post.Cin))
+              .append($("<td>").append(post.permis))
+              .append($("<td>").append(post.DatePirmis))
+              .append($("<td>").append(post.ville))
+              .append($("<td>").append(post.Phone)));
+
+  })
+      // console.log(post.companyName);
+
+
+});
+
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
+
+ 
+
+  </body>
+</html>
