@@ -101,34 +101,7 @@ function ValidateEmail(uemail) {
   }
 }
 
-function validsex(umsex, ufsex) {
-  x = 0;
 
-  if (umsex.checked) {
-    x++;
-  }
-  if (ufsex.checked) {
-    x++;
-  }
-
-  if (x == 2) {
-    alert('Both Male/Female are checked');
-    ufsex.checked = false
-    umsex.checked = false
-    umsex.focus();
-    return false;
-  }
-
-  if (x == 0) {
-    alert('Select Male/Female');
-    umsex.focus();
-    return false;
-  } else {
-    alert('Form Succesfully Submitted');
-    window.location.reload()
-    return true;
-  }
-}
 
 //First Slide images
 var slider_content = document.getElementById('box');
@@ -176,14 +149,6 @@ function carousel() {
   x[myIndex - 1].style.display = "block";
   setTimeout(carousel, 2500);
 }
-//validation email page gallery
-function myFunction() {
-  var x = document.getElementById("myEmail").pattern;
-}
-
-
-
-
 
 
 
