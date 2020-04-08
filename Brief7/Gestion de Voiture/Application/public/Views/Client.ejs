@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/list.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Dashboard</header>
+  <ul>
+    <li><a href="http://localhost:8080/client"><i class="fas fa-users"></i>List Client</a></li>
+    <li><a href="http://localhost:8080/contract"><i class="fas fa-file-contract"></i>Contrat</a></li>
+    <li><a href="http://localhost:8080/reservation"><i class="far fa-window-maximize"></i>Reservation</a></li>
+    <li><a href="http://localhost:8080/facturation"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
+    <li><a href="http://localhost:8080/intervention"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
+    <li><a href="http://localhost:8080/intervention"><i class="fas fa-search"></i>Search</a></li>
+    <li><a href="http://localhost:8080/"><i class="fas fa-sign-out-alt"></i>Deconnection</a></li>
+  </ul>
+</div>
+ <section></section>
+	<!-- Nav Bar -->	
+	<div class="container mt-5">
+		<h1 class="text-center">Client</h1>
+
+	
+		
+		<table class="table mt-5">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Cin</th>
+					<th scope="col">Permis</th>
+					<th scope="col">Date de Pirmis</th>
+					<th scope="col">Ville</th>
+					<th scope="col">Phone</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% data.forEach(d => { %>
+					<tr>
+						<th scope="row"><%= d.ID %></th>
+						<td><%= d.name %></td>
+						<td><%= d.Cin %></td>
+						<td><%= d.permis %></td>
+						<td><%= d.DatePirmis %></td>
+						<td><%= d.ville %></td>
+						<td><%= d.Phone %></td>
+						<td>
+							<a href="/edit/<%= d.ID %>" style="color: white">
+				                <button type="button" class="btn btn-success" style="background-color: #0000FF;">
+								Edit
+                </button>
+              </a>
+							<a href="/delete/<%= d.ID %>" style="color: white" onclick="return confirm('êtes-vous sûr ?')">
+                <button type="button" class="btn btn-danger">
+                  Delete
+                </button>
+			  </a>
+						</td>
+						
+					</tr>
+				<% }) %>
+			</tbody>
+		</table>
+		<a href="/add" class="btn btn-primary" style="background-color: #0000FF;">Add</a>
+	</div>
+
+	 
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
+
+ 
+
+  </body>
+</html>

@@ -56,6 +56,9 @@ body {
 ul li:hover a{
   padding-left: 50px;
 }
+.container{
+  margin-top: -41%;
+}
 .sidebar ul a i{
   margin-right: 16px;
 }
@@ -82,6 +85,9 @@ tbody{
 #check{
   display: none;
 }
+.text-center{
+  color: #0000FF;
+}
 #heroesTable {
   font-size: 20px;
   font-family: auto;
@@ -103,6 +109,7 @@ label #btn{
   padding: 6px 12px;
   transition: all .5s;
 }
+
 label #cancel{
   z-index: 1111;
   left: -195px;

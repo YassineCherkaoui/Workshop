@@ -12,6 +12,17 @@ app.use(express.static(path.join(__dirname,"public")));
 app.get('/', function(req, res){
     res.sendFile(__dirname + "/index.html");
 });
+const readJson = fs.readFileSync('./public/data/client.json');
+let data = JSON.parse(readJson);
+app.set('views', './public/views'); 
+app.set('view engine', 'ejs'); 
+app.use(express.static(__dirname + './public/views'));
+
+
+
+
+
+
 //login
 app.get('/login', function(req, res){
     res.sendFile(__dirname + "/sing in.html");
@@ -20,9 +31,7 @@ app.get('/register', function(req, res){
     res.sendFile(__dirname + "/sign up.html");
 });
 
-app.get('/client', function(req, res){
-    res.sendFile(__dirname + "/list.html");
-});
+
 app.get('/contract', function(req, res){
     res.sendFile(__dirname + "/contract.html");
 });
@@ -34,6 +43,9 @@ app.get('/facturation', function(req, res){
 });
 app.get('/intervention', function(req, res){
     res.sendFile(__dirname + "/intervention.html");
+});
+app.get('/client', (req, res) => {
+	res.render('client', { data });
 });
 
 
@@ -110,6 +122,89 @@ fs.readFile('./public/data/user.json', 'utf-8', function(err, data) {
 
 });
 
+//Add, delet, idit client =================================================================
+app.get('/add', (req, res) => {
+	res.render('add');
+});
+
+app.post('/add', (req, res) => {
+	const { name, Cin,permis,DatePirmis,ville,Phone} = req.body;
+
+	data.push({ ID: data.length + 1,
+		name: name,
+		Cin: Cin,
+		permis:permis,
+		DatePirmis:DatePirmis,
+		ville:ville,
+		Phone:Phone
+	 });
+	fs.writeFileSync('./public/data/client.json', JSON.stringify(data, null, 4));
+	res.redirect('client');
+});
+
+
+app.get('/edit/:id', (req, res) => {
+	const { id } = req.params;
+	let dataId;
+
+	for (let i = 0; i < data.length; i++) {
+		if (Number(id) == data[i].ID) {
+			dataId = i;
+		}
+	}
+
+	res.render('edit', { data: data[dataId] });
+	res.redirect('client');
+});
+
+
+app.post('/edit/:id', (req, res) => {
+	const { id } = req.params;
+	const { name, Cin,permis,DatePirmis,ville,Phone } = req.body;
+
+	let dataId;
+	for (let i = 0; i < data.length; i++) {
+		if (Number(id) === data[i].ID) {
+			dataId = i;
+		}
+	}
+
+	data[dataId].name = name;
+	data[dataId].Cin = Cin;
+	data[dataId].permis = permis;
+	data[dataId].DatePirmis = DatePirmis;
+	data[dataId].ville = ville;
+	data[dataId].Phone = Phone;
+
+	fs.writeFileSync('./public/data/client.json', JSON.stringify(data, null, 4));
+	// res.redirect('index ');
+	res.render('client',{data});
+});
+
+app.get('/delete/:id', (req, res) => {
+	const { id } = req.params;
+
+	const newData = [];
+	for (let i = 0; i < data.length; i++) {
+		if (Number(id) !== data[i].ID) {
+			newData.push(data[i]);
+		}
+	}
+
+	data = newData;
+	fs.writeFileSync('./public/data/client.json', JSON.stringify(data, null, 4));
+	// res.redirect('index');
+	res.render('client',{data});
+});
+
+
+
+
+
+
+
+
+
 
 
 
@@ -167,55 +262,6 @@ app.get('/contractdata',function(req, res){
         
     });
 })
-//client========================================================================================================
-app.post('/client',function(req, res){
-    var name = req.body.name;
-    var Cin = req.body.Cin;
-    var permis = req.body.permis;
-    var DatePirmis = req.body.DatePirmis;
-    var ville = req.body.ville;
-    var Phone = req.body.Phone;
-
-
-fs.readFile('./public/data/client.json', 'utf-8', function (err, data) {
-	if (err) throw err;
-
-	var arrayOfObjects = JSON.parse(data);
-	arrayOfObjects.push({
-        name: name,
-		Cin: Cin,
-        permis: permis,
-        DatePirmis: DatePirmis,
-        ville: ville,
-        Phone: Phone
-	});
-
-    console.log(arrayOfObjects);
-
-    fs.writeFile('./public/data/client.json', JSON.stringify(arrayOfObjects), 'utf-8', function(err) {
-        if (err) throw err;
-        console.log('Done!');
-        res.sendFile(__dirname + "/list.html");
-
-    });
-});
-
-});
-app.get('/clientdata',function(req, res){
-
-    fs.readFile('./public/data/client.json', 'utf-8', function(err, data) {
-        if (err) throw err;
-    
-        var arrayOfObjects = JSON.parse(data);
-      
-        res.send(arrayOfObjects);
-        console.log(arrayOfObjects);
-        
-    });
-})
-
-
-
 
 
 
