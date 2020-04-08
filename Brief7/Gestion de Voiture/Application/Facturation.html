@@ -29,6 +29,7 @@
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li><a href="#"><i class="fas fa-users"></i>Client</a></li>
+        <li><a href="#"><i class="fas fa-file-contract"></i>Contract</a></li>
         <li><a href="#"><i class="far fa-window-maximize"></i>Reservation</a></li>
         <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
         <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
@@ -41,21 +42,20 @@
 
 
 
-  <h1 class="titl">Contract</h1>
+  <h1 class="titl">Facturation</h1>
 
  <div class="table-responsive">
   <table class="table" id="heroesTable">
       <thead>
           <tr>
               <th>Num</th>
-              <th>Locataire</th>
-              <th>Matriculation</th>
-              <th>Date de Entre</th>
-              <th>Date de Sortie</th>
-              <th>NbrJour</th>
-              <th>Odomaetre</th>
-              <th>Montant</th>
-              <th>Rester</th>
+              <th>Date De Facturation</th>
+              <th>Prix Jour</th>
+              <th>Nbr Jour</th>
+              <th>TV%</th>
+              <th>Client</th>
+              <th>Vehicule</th>
+              <th>Montant TTL</th>
           </tr>
       </thead>
       <tbody id="heroesBody"></tbody>
@@ -65,48 +65,44 @@
 <button type="button" class="btn btn-primary btn-lg"data-toggle="modal" data-target="#exampleModal"
 data-whatever="@mdo">AJOUTER</button>
 
-<form action="/contract" method="POST">
+<form action="/facturation" method="POST">
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">AJOUTER un Contract</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Facture</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Locataire:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="locataire"required>
+                          <label for="recipient-name" class="col-form-label">Date Facturation:</label>
+                          <input type="date" class="form-control" id="recipient-name" name="datefacturation"required>
                       </div>
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Matriculation:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="matriculation"required>
-                      </div>
-                      <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Date de Entre:</label>
-                        <input type="date" class="form-control" id="recipient-name" name="dateentre"required>
+                        <label for="recipient-name" class="col-form-label">Prix Jour:</label>
+                        <input type="number" class="form-control" id="recipient-name" name="prixjour"required>
                     </div>
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Date de Sortie:</label>
-                        <input type="date" class="form-control" id="recipient-name" name="datesortie"required>
+                        <label for="recipient-name" class="col-form-label">Nbr Jour:</label>
+                        <input type="number" class="form-control" id="recipient-name" name="nbrjour"required>
                     </div>
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">NbrJour:</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nbrJour"required>
+                        <label for="recipient-name" class="col-form-label">TV%:</label>
+                        <input type="number" class="form-control" id="recipient-name" name="tv"required>
                     </div>
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Odomaetre:</label>
-                        <input type="number" class="form-control" id="recipient-name" name="odomaetre"required>
+                        <label for="recipient-name" class="col-form-label">Client:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="client"required>
                     </div>
                       <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Montant:</label>
-                        <input type="number" class="form-control" id="recipient-name" name="montant"required>
+                        <label for="recipient-name" class="col-form-label">Vehicule:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="vehicule"required>
                         <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Rester:</label>
-                          <input type="number" class="form-control" id="recipient-name" name="rester" required>
+                          <label for="recipient-name" class="col-form-label">MontantTTL:</label>
+                          <input type="number" class="form-control" id="recipient-name" name="montantTTL" required>
                       </div>
                     </div>
               </div>
@@ -124,23 +120,21 @@ data-whatever="@mdo">AJOUTER</button>
  <script>
   $.ajax({
   method : 'GET',
-  url:'http://localhost:8080/contractdata',
+  url:'http://localhost:8080/facturationdata',
   dataType: 'json'
 }).done(function(data){
   console.log(data);
   $.map(data, function(post ,i){
       $('#heroesBody').append($("<tr>")
             .append($("<td>").append(post.num))
-            .append($("<td>").append(post.locataire))
-            .append($("<td>").append(post.matriculation))
-            .append($("<td>").append(post.dateentre))
-            .append($("<td>").append(post.datesortie))
-            .append($("<td>").append(post.nbrJour))
-            .append($("<td>").append(post.odomaetre))
-            .append($("<td>").append(post.montant))
-            .append($("<td>").append(post.rester)));
-
-  })
+            .append($("<td>").append(post.datefacturation))
+            .append($("<td>").append(post.prixjour))
+            .append($("<td>").append(post.nbrjour))
+            .append($("<td>").append(post.tv))
+            .append($("<td>").append(post.client))
+            .append($("<td>").append(post.vehicule))
+            .append($("<td>").append(post.montantTTL)));
+            })
       // console.log(post.companyName);
 
 

@@ -29,6 +29,7 @@
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
         <li><a href="#"><i class="fas fa-users"></i>Client</a></li>
+        <li><a href="#"><i class="fas fa-file-contract"></i>Contract</a></li>
         <li><a href="#"><i class="far fa-window-maximize"></i>Reservation</a></li>
         <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
         <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
@@ -41,21 +42,18 @@
 
 
 
-  <h1 class="titl">Contract</h1>
+  <h1 class="titl">Interventions</h1>
 
  <div class="table-responsive">
   <table class="table" id="heroesTable">
       <thead>
           <tr>
-              <th>Num</th>
-              <th>Locataire</th>
-              <th>Matriculation</th>
-              <th>Date de Entre</th>
-              <th>Date de Sortie</th>
-              <th>NbrJour</th>
-              <th>Odomaetre</th>
-              <th>Montant</th>
-              <th>Rester</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Permis</th>
+              <th>Kilometrage</th>
+              <th>Cout</th>
+              <th>Matricule</th>
           </tr>
       </thead>
       <tbody id="heroesBody"></tbody>
@@ -65,49 +63,37 @@
 <button type="button" class="btn btn-primary btn-lg"data-toggle="modal" data-target="#exampleModal"
 data-whatever="@mdo">AJOUTER</button>
 
-<form action="/contract" method="POST">
+<form action="/intervention" method="POST">
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">AJOUTER un Contract</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Intervention</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Locataire:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="locataire"required>
+                          <label for="recipient-name" class="col-form-label">Type:</label>
+                          <input type="text" class="form-control" id="recipient-name" name="type" required>
                       </div>
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Matriculation:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="matriculation"required>
+                          <label for="recipient-name" class="col-form-label">Date:</label>
+                          <input type="date" class="form-control" id="recipient-name" name="date"required>
                       </div>
                       <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Date de Entre:</label>
-                        <input type="date" class="form-control" id="recipient-name" name="dateentre"required>
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Date de Sortie:</label>
-                        <input type="date" class="form-control" id="recipient-name" name="datesortie"required>
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">NbrJour:</label>
-                        <input type="number" class="form-control" id="recipient-name" name="nbrJour"required>
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Odomaetre:</label>
-                        <input type="number" class="form-control" id="recipient-name" name="odomaetre"required>
+                          <label for="recipient-name" class="col-form-label">Kilometrage:</label>
+                          <input type="number" class="form-control" id="recipient-name" name="kilometrage"required>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Cout:</label>
+                        <input type="number" class="form-control" id="recipient-name" name="cout"required>
                     </div>
                       <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Montant:</label>
-                        <input type="number" class="form-control" id="recipient-name" name="montant"required>
-                        <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Rester:</label>
-                          <input type="number" class="form-control" id="recipient-name" name="rester" required>
-                      </div>
+                        <label for="recipient-name" class="col-form-label">Matricule:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="matricule"required>
                     </div>
               </div>
               <div class="modal-footer">
@@ -124,21 +110,18 @@ data-whatever="@mdo">AJOUTER</button>
  <script>
   $.ajax({
   method : 'GET',
-  url:'http://localhost:8080/contractdata',
+  url:'http://localhost:8080/interventiondata',
   dataType: 'json'
 }).done(function(data){
   console.log(data);
   $.map(data, function(post ,i){
       $('#heroesBody').append($("<tr>")
-            .append($("<td>").append(post.num))
-            .append($("<td>").append(post.locataire))
-            .append($("<td>").append(post.matriculation))
-            .append($("<td>").append(post.dateentre))
-            .append($("<td>").append(post.datesortie))
-            .append($("<td>").append(post.nbrJour))
-            .append($("<td>").append(post.odomaetre))
-            .append($("<td>").append(post.montant))
-            .append($("<td>").append(post.rester)));
+              .append($("<td>").append(post.type))
+              .append($("<td>").append(post.date))
+              .append($("<td>").append(post.kilometrage))
+              .append($("<td>").append(post.DatePirmis))
+              .append($("<td>").append(post.cout))
+              .append($("<td>").append(post.matricule)));
 
   })
       // console.log(post.companyName);

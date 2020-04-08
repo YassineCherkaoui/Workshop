@@ -21,10 +21,20 @@
     <li><a href="http://localhost:8080/client"><i class="fas fa-users"></i>List Client</a></li>
     <li><a href="http://localhost:8080/contract"><i class="fas fa-file-contract"></i>Contrat</a></li>
     <li><a href="http://localhost:8080/reservation"><i class="far fa-window-maximize"></i>Reservation</a></li>
-    <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
-    <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
-    <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>Search</a></li>
-    <li><a href="#"><i class="far fa-id-card"></i>Contact</a></li>
+    <li><a href="http://localhost:8080/facturation"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
+    <li><a href="http://localhost:8080/intervention"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
+    <li class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #0000FF;border-color: #0000FF; margin-left: 29px;
+      margin-top: 10px;font-size: 23px;"><i class="fas fa-search"></i>   Search
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="fas fa-users"></i>Client</a></li>
+        <li><a href="#"><i class="fas fa-file-contract"></i>Contract</a></li>
+        <li><a href="#"><i class="far fa-window-maximize"></i>Reservation</a></li>
+        <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
+        <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
+      </a></ul></li>
+    <li><a href="http://localhost:8080/"><i class="fas fa-sign-out-alt"></i>Deconnection</a></li>
   </ul>
 </div>
  <section></section>
@@ -67,22 +77,22 @@ data-whatever="@mdo">AJOUTER</button>
               <div class="modal-body">
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Client:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="client">
+                          <input type="text" class="form-control" id="recipient-name" name="client"required>
                       </div>
                       <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Véhicule:</label>
-                        <input type="text" class="form-control" id="recipient-name" name="véhicule">
+                        <input type="text" class="form-control" id="recipient-name" name="véhicule"required>
                     </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Du:</label>
-                          <input type="date" class="form-control" id="recipient-name" name="du">
+                          <input type="date" class="form-control" id="recipient-name" name="du"required>
                       </div>
                       <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Au:</label>
-                        <input type="date" class="form-control" id="recipient-name" name="au">
+                        <input type="date" class="form-control" id="recipient-name" name="au"required>
                     </div>
                     <label for="cars">Etat:</label>
-                    <select class="browser-default custom-select custom-select-lg mb-3" name="etat">
+                    <select class="browser-default custom-select custom-select-lg mb-3" name="etat" required>
                       <option selected>Etat de Res</option>
                       <option value="Valider">Valider</option>
                       <option value="Invalider">Invalider</option>
@@ -90,7 +100,7 @@ data-whatever="@mdo">AJOUTER</button>
               </div>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Prix/Jour:</label>
-                <input type="number" class="form-control" id="recipient-name" name="prixjour">
+                <input type="number" class="form-control" id="recipient-name" name="prixjour"required>
             </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

@@ -21,9 +21,20 @@
     <li><a href="http://localhost:8080/client"><i class="fas fa-users"></i>List Client</a></li>
     <li><a href="http://localhost:8080/contract"><i class="fas fa-file-contract"></i>Contrat</a></li>
     <li><a href="http://localhost:8080/reservation"><i class="far fa-window-maximize"></i>Reservation</a></li>
-    <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
-    <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
-    <li><a href="#"><i class="far fa-id-card"></i>Contact</a></li>
+    <li><a href="http://localhost:8080/facturation"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
+    <li><a href="http://localhost:8080/intervention"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
+    <li class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: #0000FF;border-color: #0000FF; margin-left: 29px;
+      margin-top: 10px;font-size: 23px;"><i class="fas fa-search"></i>   Search
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="fas fa-users"></i>Client</a></li>
+        <li><a href="#"><i class="fas fa-file-contract"></i>Contract</a></li>
+        <li><a href="#"><i class="far fa-window-maximize"></i>Reservation</a></li>
+        <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
+        <li><a href="#"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
+      </a></ul></li>
+    <li><a href="http://localhost:8080/"><i class="fas fa-sign-out-alt"></i>Deconnection</a></li>
   </ul>
 </div>
  <section></section>
@@ -50,7 +61,7 @@
 </div>
 <br><br><br>
 <button type="button" class="btn btn-primary btn-lg"data-toggle="modal" data-target="#exampleModal"
-data-whatever="@mdo">AJOUTER</button>
+data-whatever="@mdo" style="background-color: #0000FF;">AJOUTER</button>
 
 <form action="/client" method="POST">
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -66,26 +77,26 @@ data-whatever="@mdo">AJOUTER</button>
               <div class="modal-body">
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Nom:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="name">
+                          <input type="text" class="form-control" id="recipient-name" name="name" required>
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Cin:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="Cin">
+                          <input type="text" class="form-control" id="recipient-name" name="Cin"required>
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Permis:</label>
-                          <input type="text" class="form-control" id="recipient-name" name="permis">
+                          <input type="text" class="form-control" id="recipient-name" name="permis"required>
                       </div>
                       <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Date de Pirmis:</label>
-                        <input type="date" class="form-control" id="recipient-name" name="DatePirmis">
+                        <input type="date" class="form-control" id="recipient-name" name="DatePirmis"required>
                     </div>
                       <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Ville:</label>
-                        <input type="text" class="form-control" id="recipient-name" name="ville">
+                        <input type="text" class="form-control" id="recipient-name" name="ville"required>
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Phone</label>
-                          <input type="number" class="form-control" id="recipient-name" name="Phone">
+                          <input type="tel" class="form-control" id="recipient-name" name="Phone"required>
                       </div>
                     </div>
               </div>
