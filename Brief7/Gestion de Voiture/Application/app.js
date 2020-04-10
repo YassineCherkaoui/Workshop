@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 
 const express= require('express');
 const body_parser= require('body-parser');
@@ -47,7 +46,6 @@ app.get('/intervention', function(req, res){
 app.get('/client', (req, res) => {
 	res.render('client', { data });
 });
-
 
 
 
@@ -455,6 +453,7 @@ app.get('/contactdata',function(req, res){
         
     });
 })
+//search===============================================================
 
 
 
