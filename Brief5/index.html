@@ -27,7 +27,7 @@
         <form class="flex-form" action="index.html">
             <input type="Search" placeholder="Your Email" id="myEmail"
               pattern="[a-z0-.9_%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-            <input type="submit" value="Subscribe" onclick="myFunction()">
+            <input type="submit" value="Subscribe">
         </form>
     </div>
     <div class="drop">
@@ -39,18 +39,33 @@
       <p>We have Any part of any vehicle</p>
       </div>
 
-   
+      <div class="blink"></div>
+      <div class="slider">
 
-    <div id="slider">
-		<div id="box">
-      <img src="img/a.jpg">
-		</div>
-     <div class="btn-group">
-       <button onclick="prewImage()"><img src="img/left.png"></button>
-       <button onclick="nextImage()"><img src="img/right.png"></button>
-     </div>
-    </div>
-
+        <div class="ImageSlide">
+          <img src="img/a.jpg">
+        </div>
+        
+        <div class="ImageSlide">
+          <img src="img/b.jpg">
+        </div>
+        
+        <div class="ImageSlide">
+          <img src="img/c.jpg">
+        </div>
+        <div class="ImageSlide">
+            <img src="img/d.jpg">
+          </div>
+          <div class="ImageSlide">
+            <img src="img/e.jpg">
+          </div>
+        
+          <div class="btn-group">
+        <button onclick="plusSlides(-1)"><img src="img/left.png"></button>
+        <button onclick="plusSlides(1)"><img src="img/right.png"></button>
+        </div>
+        </div>
+        <div class="blink"></div>
     <div class="h12">
       <h1>FIND YOUR OWN STYLE</h1>
       <p>our professional team will help you

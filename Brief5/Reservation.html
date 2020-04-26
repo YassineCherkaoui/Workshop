@@ -23,7 +23,7 @@
   <div class="blank"></div>
   <h1>Registration</h1>
   <div class="form">
-    <form name='registration' onSubmit="return formValidation();">
+    <form name='registration' onSubmit="return formValidation();" action="javascript:void(0);">
       <ul>
         <li><label for="userid">User id:</label></li>
         <li><input onkeyup='this.value=this.value.toUpperCase()' type="text" name="userid" size="12" /></li>
@@ -36,12 +36,12 @@
         <li><label for="country">Country:</label></li>
         <li><select name="country">
             <option selected="" value="Default">(Please select a country)</option>
-            <option value="AD">Morocco</option>
+            <option value="MA">Morocco</option>
             <option value="AF">Australia</option>
-            <option value="AL">Canada</option>
-            <option value="DZ">India</option>
-            <option value="AS">Russia</option>
-            <option value="AD">USA</option>
+            <option value="CA">Canada</option>
+            <option value="IN">India</option>
+            <option value="RU">Russia</option>
+            <option value="USA">USA</option>
 
           </select></li>
         <li><label for="zip">ZIP Code:</label></li>
