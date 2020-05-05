@@ -3,7 +3,7 @@
 /* Created on:     26/04/2020 13:37:56                          */
 /*==============================================================*/
 
-CREATE DATABASE gestion de Tournoi;
+CREATE DATABASE gestion-de-Tournoi;
 USE gestion de Tournoi;
 
 drop table if exists Equipe;
@@ -159,20 +159,10 @@ update restrict;
 /*==============================================================*/
 
 /*logim Admin with password*/
-create login Admine
-with PassWord='Ad123';
-/*user*/
-create user Admine for login Admine;
+CREATE USER 'yassine'@'localhost' IDENTIFIED BY 'yassine';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
+FLUSH PRIVILEGES
 
-grant all to Admine;
-
-/*logim utilisateur with password*/
-create login yassin
-with PassWord='Admine';
-/*user*/
-create user yassin for login yassin;
-
-grant select,insert to yassin;
 
 
 

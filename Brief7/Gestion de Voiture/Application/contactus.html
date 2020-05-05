@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Nous</title>
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/cont.css">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://localhost:8080/">AUTOGEST</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="http://localhost:8080/client">Client </a>
+        </li>
+        <li class="active"><a href="http://localhost:8080/contactus">Contact Nous</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            aria-expanded="false">Autres services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Reservation</a></li>
+            <li><a href="#">Facturation</a></li>
+            <li><a href="#">interventions</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://localhost:8080/">SE DÉCONNECTER</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 m-auto">
+        <div class="contact-form">
+          <h1>NOUS CONTACTER</h1>
+          <p class="hint-text">Nous aimerions avoir de vos nouvelles, veuillez nous laisser un message si vous avez des
+            questions.</p>
+          <form action="/contactus" method="POST">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputFirstName" class="blc">Prénom</label>
+                  <input type="text" class="form-control" id="inputFirstName" name="fname" required>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputLastName" class="blc">Nom de famille</label>
+                  <input type="text" class="form-control" id="inputLastName" name="lname" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail" class="blc">Adresse électronique</label>
+              <input type="email" class="form-control" id="inputEmail" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="inputMessage" class="blc">Message</label>
+              <textarea class="form-control" id="inputMessage" rows="5" name="message" required></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Soumettre">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

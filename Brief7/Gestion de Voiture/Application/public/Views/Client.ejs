@@ -10,24 +10,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <input type="checkbox" id="check">
-    <label for="check">
-      <i class="fas fa-bars" id="btn"></i>
-      <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-    <header>Dashboard</header>
-  <ul>
-    <li><a href="http://localhost:8080/client"><i class="fas fa-users"></i>List Client</a></li>
-    <li><a href="http://localhost:8080/contract"><i class="fas fa-file-contract"></i>Contrat</a></li>
-    <li><a href="http://localhost:8080/reservation"><i class="far fa-window-maximize"></i>Reservation</a></li>
-    <li><a href="http://localhost:8080/facturation"><i class="fas fa-file-invoice-dollar"></i>Facturation</a></li>
-    <li><a href="http://localhost:8080/intervention"><i class="fab fa-acquisitions-incorporated"></i>interventions</a></li>
-    <li><a href="http://localhost:8080/"><i class="fas fa-sign-out-alt"></i>Deconnection</a></li>
-  </ul>
-</div>
- <section></section>
-	<!-- Nav Bar -->	
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="http://localhost:8080/">AUTOGEST</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="http://localhost:8080/client">Client </a>
+				</li>
+				<li ><a href="http://localhost:8080/contactus">Contact Nous</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Autres services <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Reservation</a></li>
+						<li><a href="#">Facturation</a></li>
+						<li><a href="#">interventions</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="http://localhost:8080/">SE DÉCONNECTER</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
 	<div class="container mt-5">
 		<h1 class="text-center">Client</h1>
 
@@ -42,7 +51,7 @@
 					<th scope="col">Permis</th>
 					<th scope="col">Date de Pirmis</th>
 					<th scope="col">Ville</th>
-					<th scope="col">Phone</th>
+					<th scope="col">Téléphone</th>
 					<th scope="col">Action</th>
 				</tr>
 			</thead>
@@ -55,16 +64,16 @@
 						<td><%= d.permis %></td>
 						<td><%= d.DatePirmis %></td>
 						<td><%= d.ville %></td>
-						<td><%= d.Phone %></td>
+						<td><%= d.Téléphone %></td>
 						<td>
 							<a href="/edit/<%= d.ID %>" style="color: white">
 				                <button type="button" class="btn btn-success" style="background-color: #0000FF;">
-								Edit
+								Éditer
                 </button>
               </a>
 							<a href="/delete/<%= d.ID %>" style="color: white" onclick="return confirm('êtes-vous sûr ?')">
                 <button type="button" class="btn btn-danger">
-                  Delete
+                  Supprimer
                 </button>
 			  </a>
 						</td>
@@ -73,7 +82,7 @@
 				<% }) %>
 			</tbody>
 		</table>
-		<a href="/add" class="btn btn-primary" style="background-color: #0000FF;">Add</a>
+		<a href="/add" class="btn btn-primary" style="background-color: #0000FF;">Ajouter</a>
 	</div>
 
 	 

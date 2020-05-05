@@ -18,7 +18,7 @@ body {
   margin-top: -20px;
 }
 .sidebar header {
-  font-size: 22px;
+  font-size: 18px;
   color: white;
   line-height: 70px;
   text-align: center;
@@ -38,13 +38,7 @@ body {
   border-top: 1px solid rgba(255,255,255,.1);
   transition: .4s;
 }
-.dropdown-toggle {
-  color: #fff;
-  background-color: #0000FF;
-  border-color: #0000FF;
-  margin-left: 29px;
-  margin-top: 10px;
-}
+
 .my-custom-scrollbar {
   position: relative;
   height: 200px;
@@ -56,18 +50,14 @@ body {
 ul li:hover a{
   padding-left: 50px;
 }
-.container{
-  margin-top: -41%;
-}
+
 .sidebar ul a i{
   margin-right: 16px;
 }
 thead{
-  color: white;
   font-family: sans-serif;
 }
 tbody{
-  color: white;
   font-family: sans-serif;
 }
 .my-3 h2{

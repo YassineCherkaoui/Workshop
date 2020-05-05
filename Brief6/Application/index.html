@@ -215,7 +215,7 @@ body {
         data-whatever="@mdo">AJOUTER</button>
 
 
-    <form action="/Salaire" method="POST">
+    <form action="/contactus" method="POST">
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -263,19 +263,6 @@ body {
 
 
     <script>
-        // $.getJSON('data.json', function (data) {
-        //     /* console.log(data); */
-        //     $(data.companies).each(function (i, hero) {
-        //         $('#heroesBody').append($("<tr>")
-        //             .append($("<td>").append(hero.name))
-        //             .append($("<td>").append(hero.name2))
-        //             .append($("<td>").append(hero.age))
-        //             .append($("<td>").append(hero.slr)));
-
-        //     });
-        // })
-
-
         $.ajax({
         method : 'GET',
         url:'http://localhost:8080/userss',

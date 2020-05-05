@@ -10,29 +10,30 @@ function formValidation() {
   var umsex = document.registration.msex;
   var ufsex = document.registration.fsex;
   
-//     if (userid_validation(uid, 5, 12)) {
-//       if (passid_validation(passid, 7, 12)) {
-//         if (allLetter(uname)) {
-//           if (alphanumeric(uadd)) {
-//             if (countryselect(ucountry)) {
-//               if (allnumeric(uzip)) {
-//                 if (ValidateEmail(uemail)) {
-//                   if (validsex(umsex, ufsex)) { }
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//     return false;
+  //   if (userid_validation(uid, 5, 12)) {
+  //     if (passid_validation(passid, 7, 12)) {
+  //       if (allLetter(uname)) {
+  //         if (alphanumeric(uadd)) {
+  //           if (countryselect(ucountry)) {
+  //             if (allnumeric(uzip)) {
+  //               if (ValidateEmail(uemail)) {
+  //                 if (validsex(umsex, ufsex)) { }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return false;
 
-//   }
+  // }
   if (userid_validation(uid, 5, 12) && passid_validation(passid, 7, 12) && passid_validation(passid, 7, 12) && passid_validation(passid, 7, 12) 
-    && allLetter(uname) && alphanumeric(uadd) && countryselect(ucountry) && allnumeric(uzip) && ValidateEmail(uemail) || validsex(umsex, ufsex)){
+    && allLetter(uname) && alphanumeric(uadd) && countryselect(ucountry) && allnumeric(uzip) && ValidateEmail(uemail) && validsex(umsex, ufsex)){
  
-return false;
+
 }
+  return false;
 };
 
 function userid_validation(uid, min, mx) {

@@ -1,0 +1,222 @@
+    body {
+        color: #ffffff;
+        background: #f5f5f5;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .contact-form {
+        padding: 50px;
+        margin: -60px 0;
+    }
+
+    .contact-form h1 {
+        text-transform: uppercase;
+        margin: 0 0 15px;
+    }
+
+    .contact-form .form-control,
+    .contact-form .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+
+    .contact-form .btn-primary {
+        min-width: 150px;
+        background: #0000FF;
+        border: none;
+    }
+
+    .contact-form .btn-primary:hover {
+        background: rgb(0, 0, 223);
+    }
+
+    .contact-form label {
+        opacity: 0.9;
+    }
+
+    .contact-form textarea {
+        resize: vertical;
+    }
+
+    .hint-text {
+        font-size: 15px;
+        padding-bottom: 15px;
+        opacity: 0.8;
+    }
+
+    .bs-example {
+        margin: 20px;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: #ededed;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #0000FF;
+        transition: all .5s ease;
+        margin-top: -20px;
+    }
+
+    .sidebar header {
+        font-size: 18px;
+        color: white;
+        line-height: 70px;
+        text-align: center;
+        background: #000000;
+        user-select: none;
+    }
+
+    .sidebar ul a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 65px;
+        font-size: 20px;
+        color: white;
+        padding-left: 40px;
+        box-sizing: border-box;
+        border-bottom: 1px solid black;
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        transition: .4s;
+    }
+
+
+    .my-custom-scrollbar {
+        position: relative;
+        height: 200px;
+        overflow: auto;
+    }
+
+    .table-wrapper-scroll-y {
+        display: block;
+    }
+
+    ul li:hover a {
+        padding-left: 50px;
+    }
+
+    .container {
+        margin-top: 5%;
+    }
+
+    .sidebar ul a i {
+        margin-right: 16px;
+    }
+
+.contact-form h1 {
+    color: black;
+}
+.contact-form p {
+    color: black;
+}
+.blc {
+    color: black;
+}
+
+    .my-3 h2 {
+        margin-top: 30%;
+    }
+
+    .titl {
+        top: 2%;
+        position: absolute;
+        color: white;
+        left: 41%;
+        font-family: sans-serif;
+        font-size: 50px;
+        border-bottom: 1px solid #0000FF;
+    }
+
+    #check {
+        display: none;
+    }
+
+    .text-center {
+        color: #0000FF;
+    }
+
+    #heroesTable {
+        font-size: 20px;
+        font-family: auto;
+    }
+
+    .table-responsive {
+        margin-top: -38%;
+    }
+
+    label #btn,
+    label #cancel {
+        position: absolute;
+        background: #0000FF;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    label #btn {
+        left: 40px;
+        top: 25px;
+        font-size: 35px;
+        color: white;
+        padding: 6px 12px;
+        transition: all .5s;
+    }
+
+    label #cancel {
+        z-index: 1111;
+        left: -195px;
+        top: 17px;
+        font-size: 30px;
+        color: #ffffff;
+        padding: 4px 9px;
+        transition: all .5s ease;
+    }
+
+    #check:checked~.sidebar {
+        left: 0;
+    }
+
+    #check:checked~label #btn {
+        left: 250px;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #check:checked~label #cancel {
+        left: 195px;
+    }
+
+    #check:checked~section {
+        margin-left: 250px;
+    }
+
+    section {
+        background: url(../images/bg.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        transition: all .5s;
+        margin-top: -2%;
+    }
+
+    .browser-default {
+        width: 100%;
+        height: 36px;
+        border-radius: 6px;
+
+    }
