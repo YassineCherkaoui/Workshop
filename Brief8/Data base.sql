@@ -2,8 +2,8 @@
  Created on:     26/04/2020 13:37:56                          
 ==============================================================*/
 
-CREATE DATABASE gestion_Tournoi;
-USE gestion_Tournoi;
+CREATE DATABASE Tournoi;
+USE Tournoi;
 
 drop table if exists Equipe;
 
