@@ -1,6 +1,3 @@
-/* DBMS name:      MySQL 5.0                                    
- Created on:     26/04/2020 13:37:56                          
-==============================================================*/
 
 CREATE DATABASE Tournoi;
 USE Tournoi;
@@ -29,8 +26,7 @@ create table Equipe
       constraint AK_IDENTIFIANT_1_EQUIPE unique (equipeId)
 );
 /*affichage table*/
-select *
-from Equipe;
+select * from Equipe;
 /*insert*/
 insert into Equipe
 values(1, 'ayoube');

@@ -32,7 +32,7 @@ app.get('/client', (req, res) => {
 
 
 
-//Add, delet, idit client =================================================================
+//Add, delet, edit client =================================================================
 app.get('/add', (req, res) => {
 	res.render('add');
 });
@@ -87,7 +87,6 @@ app.post('/edit/:id', (req, res) => {
 	data[dataId].Phone = Phone;
 
 	fs.writeFileSync('./public/data/client.json', JSON.stringify(data, null, 4));
-	// res.redirect('index ');
 	res.render('client',{data});
 });
 
